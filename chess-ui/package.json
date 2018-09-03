@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pusher/chatkit": "^0.7.17",
+    "axiom": "^0.1.6",
+    "pusher-js": "^4.3.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-react": "^0.82.3"
   },
   "scripts": {
     "start": "react-scripts start",
