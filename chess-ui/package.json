@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@pusher/chatkit": "^0.7.17",
-    "axiom": "^0.1.6",
+    "axios": "^0.18.0",
     "pusher-js": "^4.3.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
