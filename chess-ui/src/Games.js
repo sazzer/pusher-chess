@@ -108,7 +108,7 @@ export default class Games extends React.Component {
         const { currentUser } = this.state;
         let chat;
         if (currentUser) {
-            const room = currentUser.rooms.find((room) => room.id == this.state.activeRoom);
+            const room = currentUser.rooms.find((room) => room.id === this.state.activeRoom);
             if (room) {
                 const game = this.state.activeRoom !== this.state.lobbyId && this.state.activeRoom;
                 chat = <Chat user={currentUser} room={room} key={room.id} startedGame={this._startedGame.bind(this)} game={game} />

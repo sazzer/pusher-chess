@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, List, Comment, Form, Input } from 'semantic-ui-react';
-import Game from './Game';
+import GameBoard from './GameBoard';
 
 export default class Chat extends React.Component {
     constructor(props) {
@@ -88,7 +88,7 @@ export default class Chat extends React.Component {
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={12}>
-                        { this.props.game && <Game room={this.props.game} user={this.props.user} /> }
+                        { this.props.game && <GameBoard room={this.props.game} user={this.props.user} /> }
                         <Comment.Group style={{height: '20em', overflow: 'auto'}}>
                             { messages }
                         </Comment.Group>

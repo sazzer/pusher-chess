@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Icon, Button, Header } from 'semantic-ui-react';
+import { List, Icon, Header } from 'semantic-ui-react';
 
 export default function Rooms({ joined, joinable, activeRoom, enterRoom, leaveRoom }) {
     const joinedRooms = joined.map((room) => (

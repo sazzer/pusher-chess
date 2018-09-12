@@ -23,7 +23,7 @@ const PIECES = {
     'BP': '♟'
 }
 
-export default class Game extends React.Component {
+export default class GameBoard extends React.Component {
     state = {
         board: [],
         players: {}
@@ -37,6 +37,7 @@ export default class Game extends React.Component {
                     if (pieceSymbol) {
                         return <text key={rowIndex + '-' + columnIndex} x={columnIndex} y={rowIndex + 0.8} style={{font: '1px sans-serif'}}>{pieceSymbol}</text>
                     }
+                    return undefined;
                 }).filter((value) => value);
             });
 
@@ -94,7 +95,7 @@ export default class Game extends React.Component {
     componentWillUnmount() {
         const room = this.props.room;
 
-        const channel = pusher.unsubscribe(`game-${room}`);
+        pusher.unsubscribe(`game-${room}`);
     }
 
     _handleBoardClick(e) {
