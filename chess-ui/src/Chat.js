@@ -88,7 +88,7 @@ export default class Chat extends React.Component {
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={12}>
-                        { this.props.game && <GameBoard room={this.props.game} user={this.props.user} /> }
+                        { this.props.game && <GameBoard room={this.props.game} user={this.props.user} ref={(child) => { this._gameBoard = child; }}/> }
                         <Comment.Group style={{height: '20em', overflow: 'auto'}}>
                             { messages }
                         </Comment.Group>
@@ -172,5 +172,12 @@ export default class Chat extends React.Component {
         }).then((room) => {
             this.props.startedGame(room.id, user.id, player);
         });
+    }
+
+    getPlayersInRoom() {
+        const players = this._gameBoard ? this._gameBoard.getPlayers() : [];
+        const playersInRoom = this.state.users
+            .filter((user) => players.includes(user.id));
+        return playersInRoom;
     }
 }

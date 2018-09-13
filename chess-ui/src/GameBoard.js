@@ -148,4 +148,8 @@ export default class GameBoard extends React.Component {
             });
         });
     }
+
+    getPlayers() {
+        return Object.keys(this.state.players);
+    }
 }

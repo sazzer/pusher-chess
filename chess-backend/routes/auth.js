@@ -1,11 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Chatkit = require('@pusher/chatkit-server');
-
-const chatkit = new Chatkit.default({
-    instanceLocator: 'CHATKIT_INSTANCE_LOCATOR',
-    key: 'CHATKIT_SECRET_KEY'
-});
+const chatkit = require('./chatkit');
 
 router.post('/', (req, res) => {
     const userId = req.query.user_id;

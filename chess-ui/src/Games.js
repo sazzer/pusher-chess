@@ -76,6 +76,13 @@ export default class Games extends React.Component {
 
     _leaveRoom(id) {
         const { currentUser } = this.state;
+        if (this._chat) {
+            const playersInRoom = this._chat.getPlayersInRoom();
+            if (playersInRoom.length === 1 && playersInRoom[0].id === currentUser.id) {
+                currentUser.deleteRoom({ roomId: id });
+            }
+        }
+
         currentUser.leaveRoom({ roomId: id })
             .then(() => {
                 this._pollRooms();
@@ -111,7 +118,7 @@ export default class Games extends React.Component {
             const room = currentUser.rooms.find((room) => room.id === this.state.activeRoom);
             if (room) {
                 const game = this.state.activeRoom !== this.state.lobbyId && this.state.activeRoom;
-                chat = <Chat user={currentUser} room={room} key={room.id} startedGame={this._startedGame.bind(this)} game={game} />
+                chat = <Chat user={currentUser} room={room} key={room.id} startedGame={this._startedGame.bind(this)} game={game} ref={(child) => { this._chat = child; }}/>
             }
         }
 
