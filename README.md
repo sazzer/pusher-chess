@@ -2,6 +2,8 @@
 
 Chess is a fascinating game of strategy between two players. And, as any multi-player game, it hugely benefits from having realtime updates of the game - both for players and for spectators.
 
+This repository is discussed at [Creating a realtime chess game](https://pusher.com/tutorials/realtime-chess-game).
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
